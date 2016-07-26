@@ -1,0 +1,15 @@
+@Test(description="Verify the Currency in Hotel in Malasia")
+	public void verifyMalasiaCurrency(){
+		helper.openHotelPage(malasiahotelId, malasiahotelType, malasiahotelName);
+		Assert.assertTrue(helper.isElementPresent(helper.locateByXpath(malasiahotelCurrnecyXpath)));
+
+		
+	}
+	
+	 malasiahotelCurrnecyXpath = helper.parseJSONToString("malasiahotelCurrnecyXpath", filePathHotelPageData);
+	 
+	 changes made in HotelPageTest.java
+	  changes made in H
+	 
+	 "//span[@class='icon icon-ringett hotelbookingcontainer__totalRupeeSymbol']"
+	 "malasiahotelCurrnecyXpath":"//span[@class='icon icon-ringett hotelbookingcontainer__totalRupeeSymbol']"
