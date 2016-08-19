@@ -4,15 +4,19 @@ import java.util.LinkedList;
 
 public class CourseSchedule {
 	
-	public boolean canFinish(int numCourses, int[][] prerequisites) {
+	public int[] canFinish(int numCourses, int[][] prerequisites) {
 	    if(prerequisites == null){
 	        throw new IllegalArgumentException("illegal prerequisites array");
 	    }
 	 
 	    int len = prerequisites.length;
 	 
-	    if(numCourses == 0 || len == 0){
-	        return true;
+	    if(len == 0){
+	        int[] res = new int[numCourses];
+	        for(int m=0; m<numCourses; m++){
+	            res[m]=m;
+	        }
+	        return res;
 	    }
 	 
 	    // counter for number of prerequisites
@@ -31,9 +35,12 @@ public class CourseSchedule {
 	 
 	    // number of courses that have no prerequisites
 	    int numNoPre = queue.size();
+	    int[] result = new int[numCourses];
+	    int j=0;
 	 
 	    while(!queue.isEmpty()){
 	        int top = queue.remove();
+	        result[j++]=top;
 	        for(int i=0; i<len; i++){
 	            // if a course's prerequisite can be satisfied by a course in queue
 	            if(prerequisites[i][1]==top){
@@ -46,7 +53,12 @@ public class CourseSchedule {
 	        }
 	    }
 	 
-	    return numNoPre == numCourses;
+	    //return numNoPre == numCourses;
+	    if(numNoPre==numCourses){
+	        return result;
+	    }else{
+	        return new int[0];
+	    }
 	}
 
 	public static void main(String[] args) {
@@ -55,7 +67,11 @@ public class CourseSchedule {
 		int numCourses=5;
 		int [][] array={{0,1},{1,2},{4,3},{2,4}};
 		
-		System.out.println(cs.canFinish(numCourses, array));
+		int arr[]=cs.canFinish(numCourses, array);
+		
+		for(int i:arr){
+			System.out.print(i+" ");
+		}
 		
 	}
 
