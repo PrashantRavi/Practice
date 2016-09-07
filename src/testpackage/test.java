@@ -6,15 +6,19 @@ public class test {
 
 	public static void main(String[] args) {
 
-		boolean [] arr=new boolean[10];
-		int j=2;
-		for(int i=j;i<arr.length;i=i+j){
-			arr[i]=true;
-		}
-		for(int i=0;i<arr.length;i++){
-			System.out.println(i+"   "+arr[i]);
-		}
 		
+		System.out.println(find(15));
+		
+	}
+	
+	public static int find(int N){
+		int num=N;
+		 int count =0;
+		while (num >1){
+		num=num/2;
+		count++;
+		}
+		return count-1;
 	}
 
 }
