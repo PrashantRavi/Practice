@@ -16,7 +16,7 @@ public class test {
 	 }
 	 
 	 
-	public  static int score(String s) 
+	public  static int score(String s) {
 //What the Hell
 		 boolean array[]= new boolean[150];
 		 
