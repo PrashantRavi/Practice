@@ -2,9 +2,5 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/ravi.parshant/Documents/workspace/Practice/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ravi.parshant/Downloads/apache-httpcomponents-httpcore.jar.zip"/>
-	<classpathentry kind="lib" path="/Users/ravi.parshant/Downloads/httpcore-4.2.3.jar.zip"/>
-	<classpathentry kind="lib" path="/Users/ravi.parshant/Downloads/httpclient-4.0.3.jar.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
