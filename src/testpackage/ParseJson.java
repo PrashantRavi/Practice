@@ -1,4 +1,4 @@
-package testpackage;
+ /*package testpackage;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,7 +26,7 @@ public class ParseJson {
 			}
 			
 			
- /*
+
   
             Object obj = parser.parse(new FileReader(
                     "/Users/ravi.parshant/Documents/workspace/Practice/file1.txt"));
@@ -46,11 +46,11 @@ public class ParseJson {
             Iterator<String> iterator = companyList.iterator();
             while (iterator.hasNext()) {
                 System.out.println(iterator.next());
-            }*/
+            }
  
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-}
+}*/
