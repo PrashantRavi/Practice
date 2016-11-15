@@ -17,6 +17,7 @@ public class test {
 	 
 	 
 	public  static int score(String s) {
+//What the Hell
 		 boolean array[]= new boolean[150];
 		 
 		 int score =0;
