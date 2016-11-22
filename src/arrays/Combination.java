@@ -5,7 +5,7 @@ public class Combination {
 	public static int SIZE = 0;
 	public static int[] input = { 1, 2, 3, 4, 5 };
 
-	public static int sumToFind = 8;
+	public static int sumToFind = 15;
 	public static int ans1 = 0;
 	public static int ans2 = 0;
 
