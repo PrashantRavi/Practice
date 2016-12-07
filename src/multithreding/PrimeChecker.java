@@ -1,5 +1,6 @@
 package multithreding;
 
+import java.util.Calendar;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -11,7 +12,8 @@ public class PrimeChecker {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter maximum number to check: ");
         Integer number = sc.nextInt();
-
+        
+        long start= Calendar.getInstance().getTimeInMillis();
         BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(number);
 
         NumberEnumerationTask initialize = new NumberEnumerationTask(queue, number);
@@ -20,8 +22,10 @@ public class PrimeChecker {
         for (int i = 0; i <= number; i++) {
             new Thread(new PrimeRunner(queue)).start();
         }
-
+     long end= Calendar.getInstance().getTimeInMillis();
         sc.close();
+        System.out.println();
+        System.out.println(end-start);
     }
 
 }
@@ -38,20 +42,23 @@ public class PrimeChecker {
 
     @Override
     public void run() {
-        try {
-            boolean done = false;
-            while (!done) {
-                Integer checkNumber = queue.take();
-                if (checkNumber == NumberEnumerationTask.DUMMY) {
-                    queue.put(checkNumber);
-                    done = true;
-                } else {
-                    checkPrimeNumber(checkNumber);
+    	synchronized (queue) {
+    		try {
+                boolean done = false;
+                while (!done) {
+                    Integer checkNumber = queue.take();
+                    if (checkNumber == NumberEnumerationTask.DUMMY) {
+                        queue.put(checkNumber);
+                        done = true;
+                    } else {
+                        checkPrimeNumber(checkNumber);
+                    }
                 }
+            } catch(InterruptedException e) {
+                e.printStackTrace();
             }
-        } catch(InterruptedException e) {
-            e.printStackTrace();
-        }
+		}
+        
     }
 
     private void checkPrimeNumber(Integer number) {
