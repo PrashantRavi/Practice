@@ -36,14 +36,14 @@ public class Permutation {
 		//Here index variable is used for filling the output array which is managed by recursion.
 		for(int i=0;i<SIZE;i++)
 		{
-			if(visited[i])
+			if(!visited[i])
 			{
-				continue;
+				visited[i]=true;
+				output[index]=input[i];
+				permute(index+1);
+				visited[i]=false;
 			}
-			visited[i]=true;
-			output[index]=input[i];
-			permute(index+1);
-			visited[i]=false;
+			
 		}
 		
 		
