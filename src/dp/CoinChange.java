@@ -26,19 +26,15 @@ public class CoinChange {
 		for (int i = 0; i < m; i++)
 			for (int j = S[i]; j <= n; j++)
 				table[j] += table[j - S[i]];
-
+		
 		return table[n];
 	}
 
 	// Driver Function to test above function
 	public static void main(String args[]) {
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
-		int M = sc.nextInt();
-		int[] arr = new int[M];
-		for (int i = 0; i < M; i++) {
-			arr[i] = sc.nextInt();
-		}
-		System.out.println(countWays(arr, M, N));
+		 int arr[] = {1, 4, 3};
+	        int m = arr.length;
+	        int n = 8;
+	        System.out.println(countWays(arr, m, n));
 	}
 }
