@@ -10,17 +10,36 @@ public class PreOrder {
 		root.left.left=new TreeNode(4);
 		root.left.right=new TreeNode(5);
 		root.right.left=new TreeNode(6);
-		
-      p.Recursive(root);
+		p.FindLeaveNode(root);
 		
 	}
 	
-	public void Recursive(TreeNode root){
+	public void preorder(TreeNode root){
 		if(root==null) return ;
 			System.out.print(root.val+" ");
-		Recursive(root.left);
-		Recursive(root.right);
+			preorder(root.left);
+			preorder(root.right);
 		
 	}
+	
+	public void postorder(TreeNode root){
+		if(root==null) return;
+		postorder(root.left);
+		postorder(root.right);
+		System.out.print(root.val+" ");
+	}
+	
+public void inorder(TreeNode root){
+		
+	}
+
+public void FindLeaveNode(TreeNode root){
+	if(root==null) return;
+	if(root.left==null&&root.right==null){
+		System.out.println(root.val);
+	}
+	FindLeaveNode(root.left);
+	FindLeaveNode(root.right);
+}
 
 }
