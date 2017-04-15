@@ -20,7 +20,7 @@ public class Utils {
         return result;
     }
 
-    public static List<String> runProcess(boolean isWin, String... command) {
+    public static List<String> runProcess(String... command) {
         System.out.print("command to run: ");
         for (String s : command) {
             System.out.print(s);
@@ -28,7 +28,8 @@ public class Utils {
         System.out.print("\n");
         String[] allCommand = null;
         try {
-            if (isWin) {
+        	String osname=System.getProperty("os.name");
+            if (osname.contains("Windows")) {
                 allCommand = concat(WIN_RUNTIME, command);
             } else {
                 allCommand = concat(OS_LINUX_RUNTIME, command);
@@ -54,6 +55,6 @@ public class Utils {
     }
     
     public static void main(String[] args) throws IOException, InterruptedException {
-       runProcess(false, "adb shell am start -a android.intent.action.VIEW -d \"http://traveler-api.ttdev.in/tour-packages/kerala\" com.traveltriangle.traveller");
+       runProcess("adb shell am start -a android.intent.action.VIEW -d \"http://traveler-api.ttdev.in/tour-packages/kerala\" com.traveltriangle.traveller");
     }
 }
