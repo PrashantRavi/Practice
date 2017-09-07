@@ -1,4 +1,4 @@
-package api;
+/*package api;
 
 import java.util.Properties;
 
@@ -58,4 +58,4 @@ public class GmailInbox {
 		}
 	}
 
-}
+}*/
