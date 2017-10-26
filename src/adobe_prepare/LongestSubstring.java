@@ -30,6 +30,7 @@ public class LongestSubstring {
 	 
 	            while(start<i&&s.charAt(start)!=c){
 	                set.remove(s.charAt(start));
+	                System.out.println(set);
 	                start++;
 	            }
 	            start++;
