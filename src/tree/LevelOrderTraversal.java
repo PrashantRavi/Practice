@@ -3,6 +3,7 @@ package tree;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class LevelOrderTraversal {
 
@@ -26,6 +27,7 @@ public class LevelOrderTraversal {
 	    if(root == null)
 	        return al;
 	 
+	    
 	    LinkedList<TreeNode> current = new LinkedList<TreeNode>();
 	    LinkedList<TreeNode> next = new LinkedList<TreeNode>();
 	    current.offer(root);
